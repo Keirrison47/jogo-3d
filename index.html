@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Runner 3D</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #050510;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      user-select: none;
+    }
+    #ui {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+    #game-over {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 40px;
+      border-radius: 12px;
+      border: 2px solid #00ffcc;
+      box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+    }
+    h1 {
+      margin-top: 0;
+      color: #ff4757;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #050510;
+      background-color: #00ffcc;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    #instructions {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div id="ui">Pontuação: <span id="score">0</span></div>
+
+  <div id="game-over">
+    <h1>FIM DE JOGO</h1>
+    <p>Sua pontuação final: <span id="final-score">0</span></p>
+    <button onclick="resetGame()">Jogar Novamente</button>
+  </div>
+
+  <div id="instructions">Use as setas ⬅️ e ➡️ (ou A e D) para desviar dos obstáculos</div>
+
+  <script src="https://cloudflare.com"></script>
+  <script src="game.js"></script>
+</body>
+</html>
